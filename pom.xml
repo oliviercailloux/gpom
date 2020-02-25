@@ -1,0 +1,44 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<parent>
+		<groupId>io.github.oliviercailloux</groupId>
+		<artifactId>pom</artifactId>
+		<version>0.0.4-SNAPSHOT</version>
+	</parent>
+	<artifactId>gpom</artifactId>
+	<name>oliviercailloux GPOM</name>
+	<description>A simple POM with reasonable defaults, including the Guava dependency, for use in Maven artifacts under the io.github.oliviercailloux group id.</description>
+	<packaging>pom</packaging>
+	<url>https://github.com/oliviercailloux/gpom</url>
+	<scm>
+		<connection>scm:git:git://github.com/oliviercailloux/gpom.git</connection>
+		<developerConnection>scm:git:ssh://github.com/oliviercailloux/gpom.git</developerConnection>
+		<url>https://github.com/oliviercailloux/gpom</url>
+	</scm>
+	<profiles>
+		<profile>
+			<id>release</id>
+			<build>
+				<plugins>
+					<plugin>
+						<artifactId>maven-javadoc-plugin</artifactId>
+						<configuration>
+							<links>
+								<link>https://google.github.io/guava/releases/28.2-jre/api/docs/</link>
+							</links>
+						</configuration>
+					</plugin>
+				</plugins>
+			</build>
+		</profile>
+	</profiles>
+	<dependencies>
+		<dependency>
+			<groupId>com.google.guava</groupId>
+			<artifactId>guava</artifactId>
+			<version>28.2-jre</version>
+		</dependency>
+	</dependencies>
+</project>
